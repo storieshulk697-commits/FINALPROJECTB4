@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block xyz %}
+
+          <!--- contact-->
+         <div class="row py-5 services">
+          <div class="col-sm-10 mx-auto">
+            <div class="row">
+              <div class="col-sm-5">
+              <!-- start card-->
+                <div class="row">
+                  <div class="card mb-3">
+  <div class="row g-0 p-3">
+    <div class="col-md-2">
+      <i class="fa-solid fa-phone"></i>
+    </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <div class="card-title">
+          <b>Call Us</b><br/>
+          +91-6388747215
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+               <!-- end card-->
+                 <!-- start card-->
+                <div class="row">
+                  <div class="card mb-3">
+  <div class="row g-0 p-3">
+    <div class="col-md-2">
+      <i class="fa-solid fa-envelope"></i>
+    </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <div class="card-title">
+          <b>Mail Us</b><br/>
+          asmisingh98@gmail.com
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+               <!-- end card-->
+                 <!-- start card-->
+                <div class="row">
+                  <div class="card mb-3">
+  <div class="row g-0 p-3">
+    <div class="col-md-2">
+      <i class="fa-solid fa-location-dot"></i>
+    </div>
+    <div class="col-md-10">
+      <div class="card-body">
+        <div class="card-title">
+          <b>Address</b><br/>
+          Plot NO 50 Samneghat Varanasi
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+               <!-- end card-->
+              </div>
+              <div class="col-sm-7">
+        <b class="badge bg-success text-light">{{msg}}</b>
+                <form method="post">
+                    {% csrf_token %}
+                  <input type="text" name="name" required placeholder="Name" class="form-control"/>
+                   <input type="number" name="mobile" required placeholder="Mobile" class="form-control"/>
+                    <input type="email" name="email" required placeholder="Email" class="form-control"/>
+                    <textarea class="form-control txta" name="message" required placeholder="Message"></textarea>
+                    <input type="submit" value="Save" class="btn1"/>
+                </form>
+            
+          </div>
+            </div>
+             <div class="row">
+              <div class="col-sm-12 p-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.138196474489!2d82.98537597453898!3d25.265936177666767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398e333cd3768c41%3A0xf5fb1b7df0e0b72b!2sShri%20Kashi%20Vishwanath%20Ji%20Temple%2C%20BHU%20Campus%20(Varanasi)!5e0!3m2!1sen!2sin!4v1784722335391!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              </div>
+             </div>
+          </div>
+         </div>
+         <!---end contact-->
+{% endblock %}

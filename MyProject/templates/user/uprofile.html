@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block xyz %}
+
+<div class="row py-2 profile">
+    <div class="col-sm-8 mx-auto">
+     <p class="fs-3 text-center">My <b class="text-color1">Profile</b></p>
+                <hr class="w-25 mx-auto"/>
+                 <div class="row p-0 shadow-lg rounded-3">
+                    <div class="col-sm-12">
+                        <div class="position-relative">
+                        <img src="{% static 'images/z.jpg' %}" class="img-fluid"/>
+
+                        <img src="{% static 'images/myself.jpeg' %}" class="img-fluid 
+                        position-absolute rounded-circle profileimg"
+                        style="height: 150px;width: 150px;"/>
+                       
+                    </div>
+                    <div class="p-4 text-center mt-5">
+                        <h5 class="text-center">Asmi Singh</h5>
+                
+                <i class="fa-solid fa-location-dot"></i> Lucknow, Uttar Pradesh
+                <br/>
+                <a class="btn1 bg-color1 text-light">Edit Profile <i class="fa-solid fa-pencil"></i></a>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 text-center p-4">
+                        <div class="p-4 shadow-lg border border1 border-secondary rounded-3 profilediv">
+                            <i class="fa-solid fa-envelope fs-3 rounded-circle rounded-cirle bg-color1 p-2 text-light"></i><br/><br/>
+                            asmi98@gmail.com
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-3 text-center p-4">
+                        <div class="p-4 shadow-lg border border1 border-secondary rounded-3 profilediv">
+                            <i class="fa-solid fa-call fs-3 rounded-circle rounded-cirle bg-color1 p-2 text-light"></i><br/><br/>
+                            +91-6388747215
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-3 text-center p-4">
+                        <div class="p-4 shadow-lg border border1 border-secondary rounded-3 profilediv">
+                            <i class="fa-solid fa-calender fs-3 rounded-circle rounded-cirle bg-color1 p-2 text-light"></i><br/><br/>
+                            20-11-2008
+                        </div>
+                    </div>
+                    <div class="row">
+                    <div class="col-sm-3 text-center p-4">
+                        <div class="p-4 shadow-lg border border1 border-secondary rounded-3 profilediv">
+                            <i class="fa-solid fa-location-dot fs-3 rounded-circle rounded-cirle bg-color1 p-2 text-light"></i><br/><br/>
+                            Varanasi,Uttar Pradesh
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-sm-12 p-3">
+                    <div class="p-3 bg-color1 rounded-3 text-light">
+                        <h6>About Me</h6>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati laboriosam similique laborum quisquam sint nihil dolorem eius recusandae sed quaerat reprehenderit, odit laudantium cum? Aut ut doloribus saepe mollitia debitis!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, eligendi dolor possimus esse natus itaque sed quia eos quibusdam consectetur quo odio officia, atque qui velit rem provident id exercitationem.
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+{% endblock %}

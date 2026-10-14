@@ -1,0 +1,125 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block xyz %}
+{% if not request.session.email %}
+<script>
+    alert("you have to login first");
+    location.href="/user/login/"
+</script>
+{% endif%}
+<div class="row py-3">
+    <div class="col-sm-10 mx-auto">
+        <p class="h3 text-center"><i class="fa-solid fa-gauge-high"></i>My<b class="text-color1"> Dashboard</b></p>
+        <div class="row py-3 g-4">
+        <!--Card Start-->
+        <div class="col-sm-3">
+            <a href="/customer/profile/">
+            <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard border border-o">
+                <div class="text-center">
+                <i class="fa-solid fa-home text-color1 fs-2 rounded-circle p-2 bg-light" style="height: 45px; width: 75px;"></i>
+                </div>
+                <p class="text-color1 h5">Dashboard</p>
+            </div>
+            </a>
+        </div>
+        <!--Card End-->
+
+        <!--Card Start-->
+        <div class="col-sm-3">
+            <a href="/customer/content/">
+            <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard1 border border-o">
+                <div class="text-center">
+                <i class="fa-solid fa-user text-color1 fs-2 rounded-circle p-2 bg-light" style="height: 45px; width: 75px;"></i>
+                </div>
+                <p class="text-color1 h5">Content</p>
+            </div>
+            </a>
+        </div>
+        <!--Card End-->
+
+        <!--Card Start-->
+        <div class="col-sm-3">
+            <a href="/customer/login/">
+            <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard border border-o">
+                <div class="text-center">
+                <i class="fa-solid fa-box-open text-color1 fs-2 rounded-circle p-2 bg-light" style="height: 45px; width: 75px;"></i>
+                </div>
+                <p class="text-color1 h5">Login</p>
+            </div>
+            </a>
+        </div>
+        <!--Card End-->
+
+        <!--Card Start-->
+        <div class="col-sm-3">
+            <a href="/customer/about/">
+            <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard border border-o">
+                <div class="text-center">
+                <i class="fa-solid fa-cart-shopping text-color1 fs-2 rounded-circle p-2 bg-light" style="height: 45px; width: 75px;"></i>
+                </div>
+                <p class="text-color1 h5">About us</p>
+            </div>
+            </a>
+        </div>
+        <!--Card End-->
+
+        <!--Card Start-->
+        <div class="col-sm-3">
+            <a href="/customer/profile/">
+            <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard border border-o">
+                <div class="text-center">
+                <i class="fa-solid fa-truck text-color1 fs-2 rounded-circle p-2 bg-light" style="height: 45px; width: 75px;"></i>
+                </div>
+                <p class="text-color1 h5">My Profile</p>
+            </div>
+            </a>
+        </div>
+        <!--Card End-->
+        
+<!--Card Start-->
+        <div class="col-sm-3">
+            <a href="/customer/reggisrtion/">
+            <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard border border-o">
+                <div class="text-center">
+                <i class="fa-solid fa-credit-card text-color1 fs-2 rounded-circle p-2 bg-light" style="height: 45px; width: 75px;"></i>
+                </div>
+                <p class="text-color1 h5">Register</p>
+            </div>
+            </a>
+        </div>
+        <!--Card End-->
+
+        <!--Card Start-->
+        <div class="col-sm-3">
+            <a href="/customer/team/">
+            <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard border border-o">
+                <div class="text-center">
+                <i class="fa-solid fa-star text-color1 fs-2 rounded-circle p-2 bg-light" style="height: 45px; width: 75px;"></i>
+                </div>
+                <p class="text-color1 h5">Our Team</p>
+            </div>
+            </a>
+        </div>
+        <!--Card End-->
+
+        <!--Card Start-->
+        <div class="col-sm-3">
+            <a href="/customer/logout/">
+            <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard border border-o">
+                <div class="text-center">
+                <i class="fa-solid fa-power-off text-color1 fs-2 rounded-circle p-2 bg-light" style="height: 45px; width: 75px;"></i>
+                </div>
+                <p class="text-color1 h5">Logout</p>
+            </div>
+            </a>
+        </div>
+        <!--Card End-->
+
+        </div>
+    </div>
+    
+</div>
+
+
+{% endblock %}

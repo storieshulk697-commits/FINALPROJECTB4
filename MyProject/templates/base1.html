@@ -1,0 +1,104 @@
+<htm>
+    {% load static %}
+    <head>
+        <title>ADMIN</title>
+        <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet"/>
+        <link href="{% static 'css/all.css' %}" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+        <style>
+            .bg-color1{
+                background:#ee4f1e;
+            }
+            .text-color1{
+                color:#ee4f1e
+            }
+            .bg-color2{
+                background:linear-gradient(45deg,#171b55,#64288f);
+            }
+            .text-color2{
+                color:#64288f;
+            }
+            .t .fa-brands{
+                color:#ee4f1e;
+                border:1px solid #ee4f1e;
+                height: 28px;
+                width: 28px;
+                text-align:center;
+                line-height:28px;
+                border-radius:2px;
+
+            }
+            .t .fa-brands:hover{
+                transform: rotate(360deg);
+                background:#ee4f1e;
+                color:white;
+                transition:all .8s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <!--Top Section-->
+            <div class="row t bg-dark text-light  py-2">
+                    <div class="col-sm-3 fs-4">
+                     <a href="#"data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"class="text-decoration-none text-color1">
+                        <i class="fa-solid fa-bars"></i>MENU</a>
+                  Apex<b class="text-color1">Commerce
+                       </b>
+                    </div>
+                     <div class="col-sm-3"></div>  
+                    <div class="col-sm-3 text-center py-2"><i class="fa-solid fa-user"></i><b>
+                        {% if request.session.email %}
+                        {{request.session.email}}
+                        {{request.session.uname}}  
+                    </b>
+                    <img src="/{{request.session.upic}}" class="rounded-circle border p-0"    height="50px" width="50px"/>
+                    {% endif %}
+                    </div>
+                    <div class="col-sm-3 text-end py-2">
+                <a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                <a href="www.linkdin.com"><i class="fa-brands fa-linkedin"></i></a>
+                <a href=" www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                <a href=" www.whatsapp.com"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+                </div>
+            <!--Top Section End-->
+            <!--menu-->
+           
+<div class="offcanvas offcanvas-start bg-dark text-light" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+    <button type="button" class="btn-close" style="color: #ee4f1e;" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <p><a href="/Customer/index/" class="text-decoration-none text-light">
+      <i class="fa-solid fa-chart-bar"></i>Dashboard</a></p>
+         <p><a href="/customer/myorder/" class="text-decoration-none text-light">
+      <i class="fa-solid fa-chart-bar"></i>Order Mistory</a></p>
+         
+         <p><a href="/customer/profile/" class="text-decoration-none text-light">
+      <i class="fa-solid fa-user"></i>My Profile</a></p>
+         <p><a href="/customer/logout/" class="text-decoration-none text-light">
+      <i class="fa-solid fa-power-off"></i>logout</a></p>
+  </div>
+</div>
+            <!--end menu-->
+            {% block xyz %}
+
+            {% endblock %}
+            <!--footer 1-->
+            <div class="row bg-dark text-light text-center py-2">
+                <div class="col-sm-6">
+                    &copy;Software Technology Pvt.Ltd
+                </div>
+                <div class="col-sm-6">
+                    Developed By: Asmi Singh
+                </div>
+            </div>
+            <!--footer end-->
+
+        </div>
+        <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    </body>
+</htm>

@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block xyz %}
+<!--slider-->
+<div class="row py-5" style="background: rgb(253, 243, 243);">
+  <div class="col-sm-10 mx-auto">
+    <div class="row">
+      <div class="col-sm-9 px-4">
+          <div class="fs-1">
+            Save More on<b class="text-color1" > Every Purchase</b>
+          </div>
+          <div class="text-justify" >
+            Enjoy exclusive discounts, exciting offers, and unbeatable deals on your favorite grocery products. Shop smarter and save more every day.
+          </div><br>
+          <a href="/user/products/" class="btn btn-dark">
+            Explore All product
+          </a>
+      </div>
+      <div class="col-sm-3">
+        <!--slider box-->
+        <div id="carouselExample" class="carousel slide carousel-fade " data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="2000">
+      <img src="{% static 'Images/offer1.jpg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'Images/offer2.webp' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="{% static 'Images/offer3.webp' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+          
+        <!--slider box end-->
+    </div>
+    </div>
+  </div>
+</div>
+<!--end slider-->
+        <!--heading-->
+        <div class="row">
+    <div class="col-sm-10 mx-auto py-5">
+        <div class="fs-3">Explore our <b class="text-color1"> Top Categories </b> | <a href="/user/products/" class="text-decoration-none badge bg-color1 rounded-1">Click to Explore All Categories</a></div>
+        <hr class="w-50"/>
+        <p>Save more with our handpicked products featuring exciting discounts and limited-time offers.</p>
+    </div>
+</div>
+<!---heading end-->
+<!--categories-->
+<div class="row pb-5 ">
+  <div class="col-sm-10 mx-auto">
+    <div class="row">
+      {% for x in categories %}
+      <div class="col-sm-2 my-2">
+        <div class="card shadow-lg">
+          <img src="/{{ x.cate_picture }}" class="card-img-top">
+          <div class="card-body text-center">
+            <b class="fs-5">{{x.category_name}}</b>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!--categories end-->
+        <!--heading-->
+<div class="row" style="background:rgba(253,247,234);">
+    <div class="col-sm-10 mx-auto py-5 ">
+      <div class="fs-3"> Top Offers Just  <b class="text-color1 ">you</b> <a href="/user/products/" class="text-decoration-none badge bg-color1 rounded-1">Click to Explore All Offered Products</a></div>
+        <hr class="w-50"/>
+         Save more on your favorite groceries with exclusive deals and limited-time discounts.
+    </div>
+</div>
+<!--heading end-->
+<!---top offered product-->
+   <div class="row pb-5" style="background:rgba(253,247,234);">
+    <div class="col-sm-10 mx-auto">
+      <div class="row">
+          {% for x in products %}
+           <!--products box-->
+                    <div class="col-sm-3 products my-3">
+                        <div class="card position-relative">
+                            <b class="badge bg-success text-light position-absolute top-0 start-100 translate-middle"><i class="fa-solid fa-inr"></i> {{x.total_discount}}/-</b>
+                            <img src="/{{ x.product_picture}}" class="card-img-top"/>
+                            <div class="card-body">
+                                <b>{{x.product_name}}</b><br/>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i><span class="text-muted" style="font-size: 13px;">( 999+ Reviews )</span><br/>
+                                <i class="fa-solid fa-inr"></i> :{{ x.price}}/- <b>{{x.product_weight}}</b> <br/>
+                                <div class="input-group-text my-2">
+                                    <span onclick="minus{{x.id}}()" class="input-group-text bg-dark text-light">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+                                    <input type="text" id="t{{x.id}}" value="0" readonly class="form-control"/>
+                                    <span onclick="plus{{x.id}}()" class="input-group-text bg-dark text-light">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </div>
+
+                                <a href="#" class="btn btn-outline-dark">Add<i class="fa-solid fa-cart-arrow-down"></i></a>
+                            </div>
+                        </div>
+                    </div>
+              <!--products box end-->
+              <script>
+    var i {{x.id}} =0;
+    function plus{{x.id}}(){
+        i{{x.id}} ++
+        document.getElementById("t").value = i{{x.id}}    
+    }
+    function minus{{x.id}}(){
+        if(i{{x.id}}>0){
+            i{{x.id}} --
+        document.getElementById("t{{x.id}}").value = i{{x.id}} 
+        }
+    }
+</script>
+
+              {% endfor %}
+        </div>
+  </div>
+</div>
+
+
+<!---top offered product end-->
+
+<!--CTA-->
+<div class="row py-5 bg-color1">
+  <div class="col-sm-10 mx-auto">
+    <div class="row">
+      <div class="col-sm-8">
+        <b> Don't Miss Today's Best Deals </b><br>
+        Enjoy a hassle grocery shopping experience with fresh fruits, vagetables, dairy products,pantry essentials,
+         snack, beverages and household items. Browse our wide selection, discover exclusive
+        offers, and have everything delivered quickly and conveniently to your doorstep.
+      </div>
+      <div class="col-sm-2 pt-4">
+        <a href="tel:+91 8736055077" class="btn btn-dark"><i class="fa-solid fa-phone"></i> call Now </a>
+      </div>
+      <div class="col-sm-2 pt-4">
+        <a href="/user/products/" class="btn btn-dark"><i class="fa-solid fa-cart-flatbed"></i> Explore all product </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End CTA-->
+
+
+{% endblock %}

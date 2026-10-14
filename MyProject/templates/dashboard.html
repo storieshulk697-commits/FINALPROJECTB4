@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block xyz %}
+<div class="row py-3">
+    <div class="col-sm-10 mx-auto">
+        <p class="h3 text-center">My <b class="text-color1">Dashboard</b></p>
+        <div class="row py-3">
+            <!---card start-->
+            <div class="col-sm-3">
+                <a href="/user/uprofile">
+                <div class="card shadow-lg mx-auto text-center p-4 rounded-3 dashcard border border-0">
+                    <div class="text-center">
+                    <i class="fa-solid fa-chart-line text-color1 fs-2 rounded-circle p-2 bg-light" style = "height: 50px; width: 50px;"></i>
+                    </div>
+                    <p class="text-color1 h5">My Profile</p>
+                </div>
+                </a>
+            </div>
+            <!---card end-->
+        </div>
+    </div>
+</div>
+{% endblock %}

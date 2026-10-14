@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block xyz %}
+<!--heading-->
+<div class="row">
+    <div class="col-sm-10 mx-auto py-5 ">
+      <div class="fs-3"> Shop Your Everyday <b class="text-color1 ">Essentials</b></div>
+        <hr class="w-50"/>
+         From farm-fruits and vagetables to your favorite household brand, find everything you need for your kitchen.
+    </div>
+</div>
+<!--heading end-->
+
+<!--Products start-->
+<div class="row">
+    <div class="col-sm-10 mx-auto">
+        <div class="row">
+            <div class="col-sm-2">
+                <ul class="list-group">
+                    <li class="list-group-item bg-dark fs-4 text-light">Our Category</li>
+                    {% for x in categories %}
+                    <a href="/user/products?cid={{x.id}}" class="text-decoration-none">
+                    <li class="list-group-item">
+                        <img src="/{{x.cate_picture}}" height="50px" width="50px" class="rounded p-1 border"/>
+                        <b>{{x.category_name}}</b>
+                    </li>
+                    </a>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-sm-10">
+                <div class="row">
+                    {% for x in products %}
+           <!--products box-->
+                    <div class="col-sm-3 products my-3">
+                        <div class="card position-relative">
+                            <b class="badge bg-success text-light position-absolute top-0 start-100 translate-middle"><i class="fa-solid fa-inr"></i> {{x.total_discount}}/-</b>
+                            <img src="/{{ x.product_picture}}" class="card-img-top"/>
+                            <div class="card-body">
+                                <b>{{x.product_name}}</b><br/>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i>
+                                <i class="fa-solid fa-star text-warning"></i> <span class="text-muted" style="font-size: 13px;">( 999+ Reviews )</span> <br/>
+                                <i class="fa-solid fa-inr"></i> :{{ x.price}}/- <b>{{x.product_weight}}</b> <br/>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" value="{{x.id}}" name="pid"/>
+                                    <input type="hidden" value="{{x.product_name}}" name="pname"/>
+                                    <input type="hidden" value="{{x.product_picture}}" name="ppic"/>
+                                    <input type="hidden" value="{{x.price}}" name="pprice"/>
+                                    <input type="hidden" value="{{x.total_discount}}" name="pdiscount"/>
+                                    <input type="hidden" value="{{x.product_weight}}" name="pweight"/>
+                                <div class="input-group-text my-2">
+                                    <span onclick="minus{{x.id}}()" class="input-group-text bg-dark text-light">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </span>
+                                    <input type="text" id="t{{x.id}}" name="pquantity" value="0" readonly class="form-control"/>
+                                    <span onclick="plus{{x.id}}()" class="input-group-text bg-dark text-light">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </span>
+                                </div>
+
+                               <input type="submit" value="Add" class="btn btn-sm  btn-outline-dark"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+<!--products box end-->
+              <script>
+    var i{{x.id}} = 0;
+
+    function plus{{x.id}}() {
+        i{{x.id}}++;
+        document.getElementById("t{{x.id}}").value = i{{x.id}};
+    }
+
+    function minus{{x.id}}() {
+        if (i{{x.id}} > 0) {
+            i{{x.id}}--;
+            document.getElementById("t{{x.id}}").value = i{{x.id}};
+        }
+    }
+</script>
+              {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--products end-->
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block xyz %}
+
+          <!--- about-->
+         <div class="row about bg-light text-justify">
+          <div class="col-sm-10 mx-auto py-5">
+            <div class="row">
+              <div class="col-sm-8">
+                <p class="fs-3">About <b class="text-color1">Me</b></p>
+                <hr class="w-25"/>
+                 <div class="row p-4 shadow-lg">
+            <div class="col-sm-4">
+                 <img src="{% static 'images/aboutme.jpeg' %}" class="img-fluid"/>
+                 
+                </div>
+                <div class="col-sm-8">
+                  <div>
+                       <h5>Er. Asmi Singh</h5>
+                            <hr class="w-25 m-0"/>
+                            <span>Software Developer</span><br/>
+                            <b>Skill</b><br/>
+                            <span class="badge bg-dark">HTML</span>
+                            <span class="badge bg-dark">CSS</span>
+                            <span class="badge bg-dark">Bootstrap</span>
+                            <span class="badge bg-dark">JavaScript</span>
+                            <span class="badge bg-dark">C Programing</span>
+                            <span class="badge bg-dark">jQuery</span>
+                            <span class="badge bg-dark">Database</span>
+                            <span class="badge bg-dark">Python Programing</span>
+                            <span class="badge bg-dark">Django</span>
+                               <hr/>
+                               <div class="t">
+                            <p>“Measuring programming progress by lines of code is like measuring aircraft building progress by weight.”
+“I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it.”
+“If you ever talk to a great programmer, you'll find they know their tools like an artist knows their paintbrushes.”
+“I still think that one of the finest tests of programming ability is to hand the programmer about 30 pages of code and see how quickly he can read through and understand it.”
+“Success is a lousy teacher. It seduces smart people into thinking they cant lose.”</p>
+                               <hr/>
+                               <a href="www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
+                               <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                               <a href=""><i class="fa-brands fa-youtube"></i></a>
+                               <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                               <a href=""><i class="fa-brands fa-instagram"></i></a>
+                               </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          </div>
+         
+        
+         <!---end about-->
+{% endblock %}
